@@ -70,6 +70,7 @@ test_inputs = torch.tensor([[1, 0],
                             [1, 1],
                             [0, 0]])
 test_inputs = test_inputs.float()
+
 test_targets = torch.tensor([1, 1, 0, 0])
 
 # with test model after training
