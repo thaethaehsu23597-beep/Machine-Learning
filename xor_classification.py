@@ -3,13 +3,13 @@ import torch.nn as nn
 import torch.optim as optim
 
 # xor dataset (classification)
-x = torch.tensor([[0, 0],
-                  [0, 1],
-                  [1, 0],
-                  [1, 1]])
+x = torch.tensor([[0.0, 0.0],
+                  [0.0, 1.0],
+                  [1.0, 0.0],
+                  [1.0, 1.0]], dtype=torch.float32)
 
 # class labels as integers
-y = torch.tensor([0, 1, 1, 0])
+y = torch.tensor([0, 1, 1, 0], dtype=torch.long)
 
 # Model
 
@@ -64,10 +64,13 @@ for epoch in range(epochs):
 
 
 # testing the model
+
 test_inputs = torch.tensor([[1, 0],
                             [0, 1],
                             [1, 1],
                             [0, 0]])
+test_inputs = test_inputs.float()
+
 test_targets = torch.tensor([1, 1, 0, 0])
 
 # with test model after training
